@@ -6,7 +6,7 @@ import { NotesModule } from './notes/notes.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://akbasu:nomoreTelegraph1@cluster0.0ufys7f.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://akbasu:<password>@cluster0.0ufys7f.mongodb.net/?retryWrites=true&w=majority'),
     NotesModule
   ],
   controllers: [AppController],
