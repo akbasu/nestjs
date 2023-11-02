@@ -8,11 +8,14 @@ import {config} from './config/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://akbasu:<password>@cluster0.0ufys7f.mongodb.net/?retryWrites=true&w=majority'),
+    //MongooseModule.forRoot('mongodb+srv://akbasu:<password>@cluster0.0ufys7f.mongodb.net/?retryWrites=true&w=majority'),
     ConfigModule.forRoot({
       isGlobal: true,
       load: [config]
     }),
+    //https://github.com/learnwithnyoman/basic-essentials-nestjs-backenda-api/blob/main/src/app.module.ts
+    //https://dev.to/nyomansunima/create-nestjs-api-using-typescript-mongodb-docker-docker-compose-29k9
+    MongooseModule.forRoot(process.env.MONGODB_CONNECTION_STRING),
     NotesModule
   ],
   controllers: [AppController],
